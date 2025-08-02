@@ -7,10 +7,6 @@ set(BUILD_SHARED_LIBS ON)
 set(FOONATHAN_MEMORY_BUILD_EXAMPLES OFF)
 set(FOONATHAN_MEMORY_BUILD_TESTS OFF)
 
-add_subdirectory(memory)
-
-include(InstallRequiredSystemLibraries)
-
 if(NOT DEFINED CPACK_PACKAGE_VERSION)
     set(CPACK_PACKAGE_VERSION ${FOONATHAN_MEMORY_VERSION})
 endif()
@@ -27,4 +23,8 @@ set(CPACK_PACKAGE_CONTACT "you@example.com")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6")
 set(CPACK_GENERATOR "DEB")
 include(CPack)
+
+add_subdirectory(memory)
+
+include(InstallRequiredSystemLibraries)
 
