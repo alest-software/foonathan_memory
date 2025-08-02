@@ -14,6 +14,7 @@ include(InstallRequiredSystemLibraries)
 set(CPACK_PACKAGE_NAME "foonathan_memory")
 set(CPACK_PACKAGE_VERSION ${FOONATHAN_MEMORY_VERSION})
 set(CPACK_PACKAGE_CONTACT "you@example.com")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 set(CPACK_GENERATOR "DEB")
 include(CPack)
 
