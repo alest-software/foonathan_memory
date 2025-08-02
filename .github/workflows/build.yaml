@@ -3,6 +3,9 @@ name: Build
 on:
   workflow_dispatch:
 
+env:
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
 jobs:
   memory:
     strategy:
@@ -14,12 +17,13 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
         submodules: recursive
         fetch-depth: 0
         
-    - name: Clone external project
+    - name: Build
       run: |
         mkdir build
         cd build
