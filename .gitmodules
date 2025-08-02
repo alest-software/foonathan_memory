@@ -1,0 +1,3 @@
+[submodule "foonathan_memory_vendor"]
+	path = foonathan_memory_vendor
+	url = https://github.com/eProsima/foonathan_memory_vendor.git
