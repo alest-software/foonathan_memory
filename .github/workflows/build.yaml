@@ -27,7 +27,9 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake ..
+        ARCH=$(dpkg --print-architecture)
+        cmake -DCPACK_DEBIAN_PACKAGE_ARCHITECTURE=${ARCH} -DCPACK_DEBIAN_PACKAGE_REVISION=${GITHUB_RUN_NUMBER} ..
         cmake --build .
         cpack
+        ls -al *.deb
         
