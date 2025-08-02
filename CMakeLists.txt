@@ -7,11 +7,11 @@ set(BUILD_SHARED_LIBS ON)
 set(FOONATHAN_MEMORY_BUILD_EXAMPLES OFF)
 set(FOONATHAN_MEMORY_BUILD_TESTS OFF)
 
-add_subdirectory(foonathan_memory)
+add_subdirectory(memory)
 
 include(InstallRequiredSystemLibraries)
 
-set(CPACK_PACKAGE_NAME "foonathan_memory_vendor")
+set(CPACK_PACKAGE_NAME "foonathan_memory")
 set(CPACK_PACKAGE_VERSION ${FOONATHAN_MEMORY_VERSION})
 set(CPACK_PACKAGE_CONTACT "you@example.com")
 set(CPACK_GENERATOR "DEB")
