@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  foonahan_memory:
+  memory:
     strategy:
       fail-fast: false
       max-parallel: 1
