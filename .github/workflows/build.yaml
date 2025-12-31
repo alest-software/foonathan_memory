@@ -27,11 +27,11 @@ jobs:
       run: |
         make -f build.mk
         
-    - name: Upload
-      uses: actions/upload-artifact@v4
-      with:
-        name: foonathan-memory-${{ matrix.platform }}
-        path: *.deb
+        #- name: Upload
+      #uses: actions/upload-artifact@v4
+        #with:
+        #name: foonathan-memory-${{ matrix.platform }}
+          #path: *.deb
 
     - name: Deploy
       run: |
