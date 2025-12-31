@@ -12,31 +12,32 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        platform: [ubuntu-24.04, ubuntu-22.04-arm64]
+        platform: [ubuntu-24.04] #, ubuntu-22.04-arm64]
 
     runs-on: ${{ matrix.platform }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-        fetch-depth: 0
+      #- name: Checkout
+      #uses: actions/checkout@v4
+      #with:
+      #  submodules: recursive
+      #  fetch-depth: 0
         
     - name: Build
       run: |
-        mkdir build
-        cd build
-        ARCH=$(dpkg --print-architecture)
-        cmake -DCPACK_DEBIAN_PACKAGE_ARCHITECTURE=${ARCH} -DCPACK_DEBIAN_PACKAGE_REVISION=${GITHUB_RUN_NUMBER} ..
-        cmake --build .
-        cpack
+        #mkdir build
+        #cd build
+        #ARCH=$(dpkg --print-architecture)
+        #cmake -DCPACK_DEBIAN_PACKAGE_ARCHITECTURE=${ARCH} -DCPACK_DEBIAN_PACKAGE_REVISION=${GITHUB_RUN_NUMBER} ..
+        #cmake --build .
+        #cpack
+        make -f build.mk
         
-    - name: Upload
-      uses: actions/upload-artifact@v4
-      with:
-        name: foonathan-memory-${{ matrix.platform }}
-        path: build/*.deb
+        #- name: Upload
+        #us#es: actions/upload-artifact@v4
+        #wi#th:
+        #name: foonathan-memory-${{ matrix.platform }}
+        #path: build/*.deb
 
     - name: Deploy
       run: |
