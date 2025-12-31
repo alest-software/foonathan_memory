@@ -31,6 +31,7 @@ jobs:
         #cmake -DCPACK_DEBIAN_PACKAGE_ARCHITECTURE=${ARCH} -DCPACK_DEBIAN_PACKAGE_REVISION=${GITHUB_RUN_NUMBER} ..
         #cmake --build .
         #cpack
+        ls -al
         make -f build.mk
         
         #- name: Upload
