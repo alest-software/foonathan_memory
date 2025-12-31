@@ -1,4 +1,4 @@
-BRANCH = v0.7-4
+BRANCH = v0.7-3
 
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
@@ -6,8 +6,8 @@ current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
 architecture = $(shell dpkg --print-architecture)
 GITHUB_RUN_NUMBER ?= 0
 
-package = libfoonathan-memory
-version = 0.1.0
+package = foonathan-memory
+version = 0.7.3
 build_number = $(GITHUB_RUN_NUMBER)
 source_dir = $(current_dir)/src
 build_dir = $(current_dir)/build
