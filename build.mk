@@ -26,7 +26,7 @@ clone:
 
 build:
 	mkdir $(build_dir)
-	(cd $(build_dir); cmake $(source_dir) -DCMAKE_INSTALL_PREFIX=$(install_prefix) -DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF -DFOONATHAN_MEMORY_BUILD_TESTS=OFF)
+	(cd $(build_dir); cmake $(source_dir) -DCMAKE_INSTALL_PREFIX=$(install_prefix) -DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF -DFOONATHAN_MEMORY_BUILD_TESTS=OFF -DBUILD_SHARED_LIBS=ON)
 	(cd $(build_dir); cmake --build . -- install)
 
 stage:
