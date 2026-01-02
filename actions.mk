@@ -37,13 +37,13 @@ stage:
 control:
 	@mkdir $(stage_dir)/DEBIAN
 	@chmod 755 $(stage_dir)/DEBIAN
-	@echo "Package: $(package)"            > $(control_file)
-	@echo "Version: $(version)"           >> $(control_file)
-	@echo "Architecture: $(architecture)" >> $(control_file)
-	@echo "Maintainer: $(maintainer)"     >> $(control_file)
-	@echo "Description: $(description)"   >> $(control_file)
-	@echo "Section: devel"                >> $(control_file)
-	@echo "Priority: optional"            >> $(control_file)
+	@echo "Package: $(package)"                  > $(control_file)
+	@echo "Version: $(version)-$(build_number)" >> $(control_file)
+	@echo "Architecture: $(architecture)"       >> $(control_file)
+	@echo "Maintainer: $(maintainer)"           >> $(control_file)
+	@echo "Description: $(description)"         >> $(control_file)
+	@echo "Section: devel"                      >> $(control_file)
+	@echo "Priority: optional"                  >> $(control_file)
 
 package:
 	@dpkg-deb --build $(stage_dir)
