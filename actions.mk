@@ -46,6 +46,6 @@ control:
 	@echo "Priority: optional"                  >> $(control_file)
 
 package:
-	@dpkg-deb --build $(stage_dir)
+	@fakeroot dpkg-deb --build $(stage_dir)
 	@dpkg-deb -c $(notdir $(stage_dir)).deb
 
